@@ -1,0 +1,133 @@
+:root {
+    --primary-color: #2a4d7e;
+    --secondary-color: #6c757d;
+    --light-bg: #f8f9fa;
+    --dark-bg: #282e30;
+    --highlight-color: #f8f0e8;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: "poppins";
+    overflow-x: hidden;
+}
+
+/* Background Style */
+.auth-bg {
+    background: url(/images/PCI2.jpg) center/cover no-repeat;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Auth Container Styles */
+.auth-container {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    opacity: 0;
+    animation: slideUp 1s ease-in-out forwards;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+    border-radius: 5px;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: var(--dark-bg);
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.text-center a {
+    color: var(--secondary-color);
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
+
+.header-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.error-text {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+/* Fade In Background Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide Up Auth Container Animation */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Input and Button Animations */
+.form-control,
+.btn {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.form-control:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.form-control:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.btn-dark {
+    animation-delay: 0.6s;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+input:focus {
+    border-color: #495057;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}

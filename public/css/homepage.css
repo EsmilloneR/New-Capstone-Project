@@ -1,0 +1,264 @@
+:root {
+    --first: #007bff;
+    --second: #6c757d;
+    --light-bg: #f8f9fa;
+    --dark-bg: #282e30;
+    --navbar: #868b8e;
+    --navbar-font: #eeede7;
+    --navbar-hover: #e7d2cc;
+}
+
+body {
+    line-height: 1.6;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 93vh;
+    background: url("/images/HeroBackground.jpg") center/cover no-repeat;
+    color: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--light-bg);
+    text-align: center;
+    padding: 50px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content .btn {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--dark-bg);
+    padding: 5px 1rem;
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    font-weight: 700;
+}
+
+.navbar-nav a {
+    font-size: 1rem;
+    margin-right: 1rem;
+    color: var(--navbar-font);
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--navbar-font);
+    text-transform: uppercase;
+}
+
+.navbar-brand span:hover,
+.navbar-nav a:hover,
+.navbar-nav .active a {
+    color: var(--navbar-hover);
+}
+
+/* Room Carousel */
+#roomCarousel {
+    max-width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.carousel-inner img {
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-inner img:hover {
+    transform: scale(1.03);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--dark-bg);
+}
+
+/* Feature Cards */
+.feature-card {
+    background-color: var(--light-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--first);
+    margin-bottom: 20px;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--dark-bg);
+}
+
+.feature-description {
+    font-size: 1.1rem;
+    color: var(--dark-bg);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--first);
+    border: none;
+    padding: 12px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: var(--navbar-hover);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    padding: 20px 0;
+    color: var(--light-bg);
+    text-align: center;
+}
+
+footer a {
+    color: var(--first);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--second);
+}
+
+footer p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+footer .svg-link {
+    width: 30px;
+    height: 25px;
+    margin-right: 8px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 50vh;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .navbar-nav a {
+        font-size: 0.9rem;
+    }
+
+    .feature-card {
+        padding: 15px;
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+
+    #roomCarousel img {
+        max-height: 250px;
+    }
+}
+
+.modal-body {
+    padding: 0px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

@@ -1,0 +1,158 @@
+/* General Styles */
+:root {
+    --first: #007bff;
+    --second: #6c757d;
+    --light-bg: #f8f9fa;
+    --dark-bg: #282e30;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: var(--dark-bg);
+    color: var(--light-bg);
+    padding-top: 20px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Sidebar hidden when closed */
+.sidebar.closed {
+    transform: translateX(-250px);
+}
+
+/* Sidebar Header Styles */
+.sidebar-header {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--second);
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    padding-top: 20px;
+    flex-grow: 1;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav a {
+    color: var(--light-bg);
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-weight: 400;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--second);
+}
+
+.sidebar-nav img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar-footer ul {
+    list-style: none;
+    /* Remove the dots */
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-footer li {
+    margin-bottom: 10px;
+    /* Add some space between the items */
+}
+
+/* Styles for SVG Icons */
+.svg-link {
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.svg-link:hover {
+    transform: scale(1.2);
+    fill: var(--first);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Shifting main content when sidebar is toggled */
+.main-content.shifted {
+    margin-left: 0;
+}
+
+/* Media Query for Smaller Screens (Mobile/Tablet) */
+@media (max-width: 992px) {
+    .sidebar {
+        transform: translateX(-250px);
+    }
+
+    .main-content.shifted {
+        margin-left: 0;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+.navbar {
+    color: var(--dark-bg);
+    background-color: var(--light-bg);
+}
+
+/* Sidebar Toggler (hamburger menu) */
+.navbar-toggler {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+/* Profile Picture in Navbar */
+.sidebar > .profile-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Navbar Text for User Info */
+.navbar-text {
+    display: flex;
+    align-items: center;
+}
+
+/* Adding some spacing between name and profile picture */
+.navbar-text h5 {
+    margin-left: 10px;
+    color: var(--light-bg);
+    font-size: 16px;
+}
